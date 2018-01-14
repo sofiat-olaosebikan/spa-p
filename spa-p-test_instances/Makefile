@@ -9,6 +9,6 @@ dir-%:
 
 results/$()%:
 	mkdir -p $(RESULTS)
-	$(PYTHON) ../spa-p-codes/ip-spa-p.py $*  | tail -n1 > $(RESULTS)/$*
+	$(PYTHON) ../spa-p-python-codes/ip-spa-p.py $*  | tail -n1 > $(RESULTS)/$*
 
 run:  $(foreach i, $(INSTANCES), $(RESULTS)/$(i))
