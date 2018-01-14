@@ -142,85 +142,10 @@ class SPAPIG:
                 I.close()
 
    
-
- # Experiment 1 -- vary number of students, keep preference list fixed for all students
-
-#lower_bound = 2
-#upper_bound = 5
-#for students in range(2100, 5100, 100):
-#    instance_path = '../experiments/experiment1/' + str(students)  # experiments/1/100
-#    os.makedirs(instance_path)
-#    for k in range(1, 1001):
-#        S = SPAPIG(students, lower_bound, upper_bound)
-#        S.spa_p_random_instance_generator()
-#        file = 'instance'+str(k)+'.txt'
-#        filename = instance_path +'/'+ file    
-#        S.write_instance(filename)
-#        
-
-
-# Experiment 2 -- fixed number of students, varied preference length between 2 and 20
-# in two parts with total project capacity of 1.1*n1 and 1.5*n1 respectively
-#
-# students = 3000
-# for bound in range(2, 21):
-#     instance_path = '../experiments/experiment2/3000/length' + str(bound)
-#     os.makedirs(instance_path)
-#     for k in range(1, 1001):
-#         S = SPAPIG(students, bound, bound)
-#         S.spa_p_random_instance_generator()
-#         file = 'instance'+str(k)+'.txt'
-#         filename = instance_path +'/'+ file
-#         S.write_instance(filename)
-
-
-# Experiment 3 -- fix number of students, fix preference list between 2 and 5
-
-students = 1000
-lower_bound = 2
-upper_bound = 5
-instance_path = '../experiments/experiment3/'  # experiments/1/100
-for k in range(1, 1001):
-   S = SPAPIG(students, lower_bound, upper_bound)
-   S.spa_p_random_instance_generator()
-   file = 'instance'+str(k)+'.txt'
-   filename = instance_path + file
-   S.write_instance(filename)
-
-
-
-
-# # Experiment 3 -- vary number of students, keep preference list btween 2 and 0.05*n1 for all students
-#
-#for students in range(100, 1100, 100):
-#    instance_path = '../experiments/experiment3/' + str(students)  # experiments/1/100
-#    os.makedirs(instance_path)
-#    lower_bound = 2
-#    upper_bound = 0.05*students # 
-#    for k in range(1, 1001):
-#        S = SPAPIG(students, lower_bound, upper_bound)
-#        S.spa_p_random_instance_generator()
-#        file = 'instance'+str(k)+'.txt'
-#        filename = instance_path +'/'+ file    
-#        S.write_instance(filename)
-#     
-
-
-
-    
-# Experiment 4 -- vary number of students, generate one instance for each student size 
-        # - we are only interested in seeing how well the IP model scales wrt n1 
-        # coalition constraint was turned on here, 
-        # how long it takes to find a maximum stable matchings is what we are interested in
-
-#lower_bound = 2
-#upper_bound = 5
-#for students in range(100, 10100, 100):
-##    instance_path = '../experiments/experiment4/' # experiments/1/100
-##    os.makedirs(instance_path)
-#    S = SPAPIG(students, lower_bound, upper_bound)
-#    S.spa_p_random_instance_generator()
-#    file = 'instance'+str(students)+'.txt'
-#    filename = instance_path +'/'+ file    
-#    S.write_instance(filename)
-     
+students = int(sys.argv[1])
+lower_bound = int(sys.argv[2])
+upper_bound = int(sys.argv[3])
+output_file = sys.argv[4]  # for example, instance.txt
+S = SPAPIG(students, lower_bound, upper_bound)
+S.spa_p_random_instance_generator()
+S.write_instance(output_file)

@@ -88,7 +88,7 @@ def experiment1(path_to_file):
     plt.xlim(100, 2500)
     plt.xlabel('Number of Students')
     plt.ylabel('Time(s)')
-    plt.title('Average time to find a maximum cardinality matching \n')
+    # plt.title('Average time to find a maximum cardinality matching \n')
     plt.legend(loc='best')
     plt.savefig('experiment1_time.png')
 
@@ -157,7 +157,7 @@ def experiment2(path_to_file, instance_size):
     plt.xlim(2, 10)
     plt.xlabel('Preference List Length')
     plt.ylabel('Time(s)')
-    plt.title('Average time to find a maximum cardinality matching \n ')
+    # plt.title('Average time to find a maximum cardinality matching \n ')
     plt.legend(loc='best')
     plt.savefig('experiment2_time.png')
 
