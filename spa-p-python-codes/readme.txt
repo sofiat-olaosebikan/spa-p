@@ -1,4 +1,4 @@
-===== The Python codes in this directory were implemented by me (Please feel free to get in touch if you need any clarification) =====
+===== The Python codes in this directory were implemented by Sofiat Olaosebikan (s.olaosebikan.1 at research.gla.ac.uk. Please feel free to get in touch if you need any clarification) =====
 |
 The directory contains an implementation of the 3/2-approximation algorithm and 2-approximation algorithm, for the problem of finding a maximum cardinality stable matching,
 given an instance of the Student-Project Allocation problem with lecturer preferences over Projects (SPA-P).
